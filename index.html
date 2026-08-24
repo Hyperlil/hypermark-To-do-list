@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hypermark | A calmer way to get things done</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="app-shell">
+		<aside class="sidebar">
+			<div class="brand"><span class="brand-mark">✦</span><span>hypermark</span></div>
+			<nav class="nav-list" aria-label="Main navigation">
+				<button class="nav-item active" data-view="all"><span class="nav-icon">▦</span> All goals <span class="nav-count" id="allCount">0</span></button>
+				<button class="nav-item" data-view="today"><span class="nav-icon">◷</span> Today <span class="nav-count" id="todayCount">0</span></button>
+				<button class="nav-item" data-view="upcoming"><span class="nav-icon">↗</span> Upcoming <span class="nav-count" id="upcomingCount">0</span></button>
+				<button class="nav-item" data-view="completed"><span class="nav-icon">✓</span> Completed <span class="nav-count" id="completedCount">0</span></button>
+			</nav>
+			<div class="sidebar-note"><span class="note-spark">✦</span><strong>Small steps, big days.</strong><p>Keep your focus close and your goals moving.</p></div>
+			<div class="sidebar-footer"><span class="avatar">HM</span><span><strong>Hey, there</strong><small>Personal space</small></span><button class="more-button" aria-label="More options">•••</button></div>
+		</aside>
+
+		<main class="main-content">
+			<header class="topbar"><div class="date-line" id="dateLine">MONDAY, AUGUST 24</div><div class="top-actions"><button class="icon-button" aria-label="Toggle theme" id="themeToggle">☼</button><button class="avatar top-avatar">HM</button></div></header>
+			<section class="welcome"><div><p class="eyebrow">YOUR PERSONAL DASHBOARD</p><h1>Make today <em>count.</em></h1><p class="subtitle">A little progress every day adds up to something wonderful.</p></div><div class="progress-ring" id="progressRing"><div><strong id="progressPercent">0%</strong><span>complete</span></div></div></section>
+
+			<section class="composer" aria-label="Add a goal">
+				<div class="input-row"><span class="plus-sign">＋</span><input id="goalInput" type="text" placeholder="What would you like to accomplish?" maxlength="120"><button id="addGoal" class="add-button">Add goal <span>↵</span></button></div>
+				<div class="composer-options"><label>Priority <select id="priorityInput"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></label><label>Due date <input type="date" id="dateInput"></label></div>
+			</section>
+
+			<section class="task-section"><div class="section-heading"><div><h2 id="viewTitle">All goals</h2><p id="taskSummary">Your goals, all in one place.</p></div><div class="toolbar"><div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search goals..."></div><select id="sortInput" aria-label="Sort goals"><option value="created">Recently added</option><option value="priority">Priority</option><option value="date">Due date</option></select></div></div><div class="task-list" id="taskList"></div><div class="empty-state" id="emptyState"><span>✦</span><h3 id="emptyTitle">Your list is a blank canvas.</h3><p>Add one small goal above and make it a good day.</p></div></section>
+		</main>
+	</div>
+	<div class="toast" id="toast" role="status"></div>
+	<script src="script.js"></script>
+</body>
+</html>
